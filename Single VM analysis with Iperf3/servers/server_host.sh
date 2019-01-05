@@ -18,7 +18,7 @@ apt-get install iperf3 -y
 
 apt-get -y install parallel
 
-parallel ::: "iperf3 -s $(hostname -I | awk '{print $3}'| cut -f2 -d:) -p 33330" "iperf3 -s $(hostname -I | awk '{print $3}'| cut -f2 -d:) -p 33331"
+parallel ::: "iperf3 -s $(hostname -I | awk '{print $1}'| cut -f2 -d:) -p 33330" "iperf3 -s $(hostname -I | awk '{print $1}'| cut -f2 -d:) -p 33331"
 
 EOF
 

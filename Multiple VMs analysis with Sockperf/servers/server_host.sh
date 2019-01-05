@@ -3,7 +3,7 @@
 echo "********************** THIS IS THE SERVER FOR HOST MODE CASE  *************************"
 
 # Get the ip address of the server
-ipserver=`hostname -I | awk '{print $1}'| cut -f2 -d:`
+ipserver=`hostname -I | awk '{print $3}'| cut -f2 -d:`
 echo "IP address of the server is :" $ipserver
 
 #Create containers with bridge mode
@@ -24,7 +24,7 @@ make
 make install
 apt-get -y install parallel
 
-parallel ::: "sockperf server --tcp -i $(hostname -I | awk '{print $1}'| cut -f2 -d:) -p 33330" "sockperf server -i $(hostname -I | awk '{print $1}'| cut -f2 -d:) -p 33331"
+parallel ::: "sockperf server --tcp -i $(hostname -I | awk '{print $3}'| cut -f2 -d:) -p 33330" "sockperf server -i $(hostname -I | awk '{print $3}'| cut -f2 -d:) -p 33331"
 
 EOF
 
