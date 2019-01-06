@@ -13,4 +13,5 @@ sudo systemctl restart docker
 
 
 sudo apt-get -y install parallel
-parallel ::: "cd servers && ./server_none.sh" "cd servers && ./server_bridge.sh" "cd servers && ./server_host.sh"
+cd servers
+parallel ::: "./server_none.sh" "./server_bridge.sh" "./server_host.sh"
