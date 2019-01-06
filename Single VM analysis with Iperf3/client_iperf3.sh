@@ -47,6 +47,7 @@ EOF
 
 # 30 tests for NONE mode with iperf3 and put the results on excel file *********************************************************************************
 echo 'NONE MODE TEST START*******************************************************************'
+mkdir statistiques
 echo 'Mode' ',' 'Throughput TCP MBps' ',' 'Throughput UDP MBps'> statistiques/Node_Mode_Results.xls
 for i in `seq 1 30`
 do
